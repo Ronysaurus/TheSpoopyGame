@@ -1,18 +1,44 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static GameManager Instance { get; private set; }
+    public bool whitemode = true;
+
+    private void Awake()
     {
-        
+        // If there is an instance, and it's not me, delete myself.
+
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ChangeMode()
     {
-        
+        whitemode = !whitemode;
+        foreach (BlockController block in FindObjectsOfType<BlockController>())
+        {
+            block.isLive = block.isWhite != whitemode;
+            block.ChangeMode();
+        }
+    }
+
+    public void End()
+    {
+        Time.timeScale = 0.2f;
+        StartCoroutine(EndScene());
+    }
+
+    private IEnumerator EndScene()
+    {
+        yield return new WaitForSecondsRealtime(2);
+        Time.timeScale = 0;
     }
 }

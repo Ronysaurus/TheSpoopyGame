@@ -20,8 +20,7 @@ public class BlockSpawner : MonoBehaviour
         yield return wait;
 
         float xPos = Random.Range(0.0f, isFull ? 7.0f : 5.0f) - (isFull ? 3.5f : 2.5f);
-        GameObject gameObject = Instantiate(isWhite ? block_w : block_b, new Vector3(xPos, 5.25f), Quaternion.identity);
-        Destroy(gameObject, 5);
+        Instantiate(isWhite ? block_w : block_b, new Vector3(xPos, 5.25f), Quaternion.identity);
         isWhite = !isWhite;
 
         if (!isFull)
