@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     public bool whitemode = true;
+    public int hscore = 0;
 
     private void Awake()
     {
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
+        StartCoroutine(SpeedUp());
     }
 
     public void ChangeMode()
@@ -40,5 +42,19 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(2);
         Time.timeScale = 0;
+    }
+
+    public void AddScore()
+    {
+        hscore++;
+        Debug.Log(hscore);
+    }
+
+    public IEnumerator SpeedUp()
+    {
+        yield return new WaitForSeconds(10);
+        BlockController.speed += 0.1f;
+        Debug.Log(BlockController.speed);
+        StartCoroutine(SpeedUp());
     }
 }

@@ -29,6 +29,7 @@ public class BlockSpawner : MonoBehaviour
         if (Mathf.Abs(xPos) > 5.0f)
             isFull = false;
 
+        GameManager.Instance.AddScore();
         StartCoroutine(Spawner());
     }
 }

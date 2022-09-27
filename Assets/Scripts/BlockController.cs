@@ -2,21 +2,30 @@ using UnityEngine;
 
 public class BlockController : MonoBehaviour
 {
+    //https://coolors.co/ffffff-2e282a-0c7489-7a28cb Colors
     public bool isWhite;
 
     private Renderer[] myRenderer;
     private Collider[] myCollider;
-    public float speed = 2.0f;
+    public static float speed = 2.0f;
     public bool isLive;
 
     private void Start()
     {
+        Color color1 = new Color();
+        ColorUtility.TryParseHtmlString("#FFFFFF", out color1);
+        Color color2 = new Color();
+        ColorUtility.TryParseHtmlString("#2E282A", out color2);
+
         myRenderer = GetComponentsInChildren<Renderer>();
+        myCollider = GetComponentsInChildren<Collider>();
         foreach (Renderer renderer in myRenderer)
         {
-            renderer.material.color = isWhite ? Color.white : Color.black;
+            renderer.material.color = isWhite ? color1 : color2;
         }
+        isLive = GameManager.Instance.whitemode != isWhite;
         Destroy(this, 6);
+        ChangeMode();
     }
 
     private void Update()
