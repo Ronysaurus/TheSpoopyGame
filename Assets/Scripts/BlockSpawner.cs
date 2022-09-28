@@ -19,7 +19,7 @@ public class BlockSpawner : MonoBehaviour
     {
         yield return wait;
 
-        float xPos = Random.Range(0, isFull ? 8 : 6) - (isFull ? 3 : 2);
+        float xPos = Random.Range(0, isFull ? 8 : 6) - (isFull ? 4 : 3);
         Instantiate(isWhite ? block_w : block_b, new Vector3(xPos, 5.25f), Quaternion.identity);
         isWhite = !isWhite;
 
