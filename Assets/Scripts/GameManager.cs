@@ -9,7 +9,10 @@ public class GameManager : MonoBehaviour
     public int hscore = 0;
 
     [SerializeField]
-    TextMeshProUGUI score;
+    private TextMeshProUGUI score, highScore;
+
+    [SerializeField]
+    private GameObject panel;
 
     private void Awake()
     {
@@ -38,6 +41,8 @@ public class GameManager : MonoBehaviour
 
     public void End()
     {
+        if (PlayerPrefs.GetInt("score") < hscore || !PlayerPrefs.HasKey("score"))
+            PlayerPrefs.SetInt("score", hscore);
         Time.timeScale = 0.2f;
         StartCoroutine(EndScene());
     }
@@ -46,6 +51,8 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(2);
         Time.timeScale = 0;
+        highScore.text = $"Score: {hscore}\r\nHigh Score : {PlayerPrefs.GetInt("score")}";
+        panel.SetActive(true);
     }
 
     public void AddScore()
@@ -58,7 +65,6 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(10);
         BlockController.speed += 0.1f;
-        Debug.Log(BlockController.speed);
         StartCoroutine(SpeedUp());
     }
 }
