@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BlockController : MonoBehaviour
 {
-    //https://coolors.co/ffffff-2e282a-0c7489-7a28cb Colors
+    //https://coolors.co/ffffff-2e282a-0c7489-434eaa-7a28cb Colors
     public bool isWhite;
 
     private Renderer[] myRenderer;
@@ -30,7 +30,7 @@ public class BlockController : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(-Vector3.up * Time.deltaTime * speed);
+        transform.Translate(speed * Time.deltaTime * -Vector3.up);
     }
 
     public void ChangeMode()

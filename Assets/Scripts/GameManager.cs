@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -6,6 +7,9 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     public bool whitemode = true;
     public int hscore = 0;
+
+    [SerializeField]
+    TextMeshProUGUI score;
 
     private void Awake()
     {
@@ -47,7 +51,7 @@ public class GameManager : MonoBehaviour
     public void AddScore()
     {
         hscore++;
-        Debug.Log(hscore);
+        score.text = hscore.ToString();
     }
 
     public IEnumerator SpeedUp()
