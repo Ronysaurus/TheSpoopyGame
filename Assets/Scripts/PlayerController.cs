@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 dir = Vector3.zero;
 
-        dir.x = -Input.acceleration.y + Input.GetAxis("Horizontal");
+        dir.x = (Input.acceleration.x * 2) + Input.GetAxis("Horizontal");
 
         if (dir.sqrMagnitude > 1)
             dir.Normalize();
