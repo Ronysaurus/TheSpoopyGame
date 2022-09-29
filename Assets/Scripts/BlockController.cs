@@ -7,7 +7,8 @@ public class BlockController : MonoBehaviour
 
     private Renderer[] myRenderer;
     private Collider[] myCollider;
-    public static float speed = 2.0f;
+    public float speed = 2.0f;
+    public static float multiplier = 1.0f;
     public bool isLive;
 
     private void Start()
@@ -30,7 +31,7 @@ public class BlockController : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(speed * Time.deltaTime * -Vector3.up);
+        transform.Translate(speed * multiplier * Time.deltaTime * -Vector3.up);
     }
 
     public void ChangeMode()

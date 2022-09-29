@@ -19,14 +19,14 @@ public class BlockSpawner : MonoBehaviour
     {
         yield return wait;
 
-        float xPos = Random.Range(0, isFull ? 8 : 6) - (isFull ? 4 : 3);
+        float xPos = Random.Range(0, isFull ? 7f : 4.5f) - (isFull ? 3.5f : 2.25f);
         Instantiate(isWhite ? block_w : block_b, new Vector3(xPos, 5.25f), Quaternion.identity);
         isWhite = !isWhite;
 
         if (!isFull)
             isFull = true;
 
-        if (Mathf.Abs(xPos) > 5.0f)
+        if (Mathf.Abs(xPos) > 2.5f)
             isFull = false;
 
         GameManager.Instance.AddScore();

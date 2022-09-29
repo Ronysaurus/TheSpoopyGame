@@ -7,11 +7,17 @@ public class PlayerController : MonoBehaviour
     private Renderer myRenderer;
     private int times = 0;
     private bool canChange;
+    private Color color1 = new Color();
+    private Color color2 = new Color();
 
     private void Start()
     {
+        ColorUtility.TryParseHtmlString("#FFFFFF", out color1);
+        ColorUtility.TryParseHtmlString("#2E282A", out color2);
+
         canChange = true;
         myRenderer = GetComponent<Renderer>();
+        myRenderer.material.color = color1;
     }
 
     private void Update()
@@ -31,6 +37,7 @@ public class PlayerController : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.Space) || Input.touchCount > 0) && canChange)
         {
             GameManager.Instance.ChangeMode();
+            myRenderer.material.color = GameManager.Instance.whitemode ? color1 : color2;
             canChange = false;
             StartCoroutine(Cooldown());
         }

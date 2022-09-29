@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class GameManager : MonoBehaviour
     public int hscore = 0;
 
     [SerializeField]
-    private TextMeshProUGUI score, highScore;
+    private TextMeshProUGUI score, highScore, speed;
 
     [SerializeField]
     private GameObject panel;
@@ -61,8 +62,15 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator SpeedUp()
     {
-        yield return new WaitForSeconds(10);
-        BlockController.speed += 0.1f;
+        yield return new WaitForSeconds(5);
+        BlockController.multiplier += 0.1f;
+        speed.text = $"x{BlockController.multiplier}";
         StartCoroutine(SpeedUp());
+    }
+
+    public void MainMenu()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
     }
 }
