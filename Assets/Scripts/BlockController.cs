@@ -25,7 +25,6 @@ public class BlockController : MonoBehaviour
             renderer.material.color = isWhite ? color1 : color2;
         }
         isLive = GameManager.Instance.whitemode != isWhite;
-        Destroy(this, 6);
         ChangeMode();
     }
 

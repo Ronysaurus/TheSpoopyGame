@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 dir = Vector3.zero;
 
-        dir.x = (Input.acceleration.x * 2) + Input.GetAxis("Horizontal");
+        dir.x = (Input.acceleration.x * 2) + (-Input.GetAxis("Vertical"));
 
         if (dir.sqrMagnitude > 1)
             dir.Normalize();
@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
         dir *= Time.deltaTime;
         transform.Translate(dir * speed);
 
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -2.5f, 2.5f), -4.5f, 0);
+        transform.position = new Vector3(-8.35f, Mathf.Clamp(transform.position.y, 0.25f, 8f),  0);
 
         if ((Input.GetKeyDown(KeyCode.Space) || Input.touchCount > 0) && canChange)
         {
