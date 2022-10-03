@@ -25,6 +25,6 @@ public class MenuScript : MonoBehaviour
 
     public void Donate()
     {
-        Application.OpenURL("https://paypal.me/AlainBarragan?country.x=MX&locale.x=en_US");
+        Application.OpenURL("https://ko-fi.com/ronysaurus");
     }
 }
