@@ -58,10 +58,10 @@ English
     - Main menu button
 
 
-### Datos tecnicos:
+### Technical Data:
 
-Engine: Unity 2021.3.8
-Language: C#
+-Engine: Unity 2021.3.8
+-Language: C#
 
 #### Third party assets:
 
