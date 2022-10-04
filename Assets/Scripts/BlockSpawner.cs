@@ -30,7 +30,6 @@ public class BlockSpawner : MonoBehaviour
         if (yPos > 7.75f || yPos < 0.75f)
             isFull = false;
 
-        GameManager.Instance.AddScore();
         StartCoroutine(Spawner());
     }
 }

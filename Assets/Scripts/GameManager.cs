@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -8,6 +9,9 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     public bool whitemode = true;
     public int hscore = 0;
+
+    [SerializeField]
+    private AudioSource audioS;
 
     [SerializeField]
     private TextMeshProUGUI score, highScore, speed;
@@ -58,13 +62,14 @@ public class GameManager : MonoBehaviour
     {
         hscore++;
         score.text = hscore.ToString();
+        audioS.Play();
     }
 
     public IEnumerator SpeedUp()
     {
         yield return new WaitForSeconds(5);
         BlockController.multiplier += 0.1f;
-        speed.text = $"x{BlockController.multiplier}";
+        speed.text = $"x{Math.Round(BlockController.multiplier, 1)}";
         StartCoroutine(SpeedUp());
     }
 

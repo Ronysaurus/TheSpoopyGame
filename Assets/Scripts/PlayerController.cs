@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private readonly float speed = 2.0f;
-    private Renderer myRenderer;
+    private readonly float speed = 3.0f;
+    private SpriteRenderer myRenderer;
     private int times = 0;
     private bool canChange;
     private Color color1 = new Color();
@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
         ColorUtility.TryParseHtmlString("#2E282A", out color2);
 
         canChange = true;
-        myRenderer = GetComponent<Renderer>();
+        myRenderer = GetComponentInChildren<SpriteRenderer>();
         myRenderer.material.color = color1;
     }
 
@@ -45,6 +45,11 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("Finish"))
+        {
+            GameManager.Instance.AddScore();
+            return;
+        }
         GameManager.Instance.End();
         Destroy(other.gameObject);
         StartCoroutine(Death());
