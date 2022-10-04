@@ -60,7 +60,7 @@ English
 
 ### Datos tecnicos:
 
-Engine: Unity 2021.3.8 
+Engine: Unity 2021.3.8
 Language: C#
 
 #### Third party assets:
