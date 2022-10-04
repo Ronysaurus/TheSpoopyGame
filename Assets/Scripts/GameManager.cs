@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     public int hscore = 0;
 
     [SerializeField]
+    private Sprite spriteW, spriteB;
+
+    [SerializeField]
     private AudioSource audioS;
 
     [SerializeField]

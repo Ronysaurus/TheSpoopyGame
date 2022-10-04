@@ -741,6 +741,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whitemode: 1
   hscore: 0
+  spriteW: {fileID: 0}
+  spriteB: {fileID: 0}
   audioS: {fileID: 519420035}
   score: {fileID: 1283622373}
   highScore: {fileID: 1066130098}
@@ -2659,7 +2661,15 @@ PrefabInstance:
     - target: {fileID: 2651028172260259526, guid: 0b51497a9fa47d14582355353f6b1499, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9fa04374e80d18646a1ce13dd0e41457, type: 2}
+      objectReference: {fileID: 2100000, guid: eb4478d4af8c8c044bae432db51426a8, type: 2}
+    - target: {fileID: 2651028172260259544, guid: 0b51497a9fa47d14582355353f6b1499, type: 3}
+      propertyPath: spriteB
+      value: 
+      objectReference: {fileID: 21300000, guid: fe7965322d1379a4ebd32e1c12baa479, type: 3}
+    - target: {fileID: 2651028172260259544, guid: 0b51497a9fa47d14582355353f6b1499, type: 3}
+      propertyPath: spriteW
+      value: 
+      objectReference: {fileID: 21300000, guid: a93d5f68da01a4b4db14702fa667c1b5, type: 3}
     - target: {fileID: 2651028172260259545, guid: 0b51497a9fa47d14582355353f6b1499, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2668,8 +2678,7 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4642079948861759829, guid: 0b51497a9fa47d14582355353f6b1499, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b51497a9fa47d14582355353f6b1499, type: 3}
 --- !u!1001 &5919837841054365902
 PrefabInstance:
