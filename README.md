@@ -67,3 +67,5 @@ English
 
 - [UI button and hallowing element combo](https://assetstore.unity.com/packages/2d/gui/icons/ui-button-and-hallowing-element-combo-145041)
 - [Free 2D Cartoon Parallax Background](https://assetstore.unity.com/packages/2d/environments/free-2d-cartoon-parallax-background-205812)
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Y8Y2FDRZH)
