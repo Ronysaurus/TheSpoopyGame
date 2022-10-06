@@ -10,9 +10,11 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer myRenderer;
     private int times = 0;
     private bool canChange;
+    private float tiltBase;
 
     private void Start()
     {
+        tiltBase = Input.acceleration.z;
         canChange = true;
         myRenderer = GetComponentInChildren<SpriteRenderer>();
         myRenderer.sprite = spriteW;
@@ -22,7 +24,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 dir = Vector3.zero;
 
-        dir.x = (Input.acceleration.z * 2.5f) + (-Input.GetAxis("Vertical"));
+        dir.x = ((Input.acceleration.z - tiltBase) * 3.5f) + (-Input.GetAxis("Vertical"));
 
         if (dir.sqrMagnitude > 1)
             dir.Normalize();
