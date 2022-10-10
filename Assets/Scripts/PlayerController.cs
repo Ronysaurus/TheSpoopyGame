@@ -6,6 +6,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Sprite spriteW, spriteB;
 
+    [SerializeField]
+    private AudioSource audioS;
+
     private readonly float speed = 3.0f;
     private SpriteRenderer myRenderer;
     private int times = 0;
@@ -50,7 +53,9 @@ public class PlayerController : MonoBehaviour
             GameManager.Instance.AddScore();
             return;
         }
+        audioS.Play();
         GameManager.Instance.End();
+        Destroy(other.transform.GetChild(0).gameObject);
         Destroy(other.gameObject);
         StartCoroutine(Death());
     }

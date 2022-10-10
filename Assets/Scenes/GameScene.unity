@@ -742,8 +742,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whitemode: 1
   hscore: 0
-  spriteW: {fileID: 0}
-  spriteB: {fileID: 0}
   audioS: {fileID: 519420035}
   score: {fileID: 1283622373}
   highScore: {fileID: 1066130098}
@@ -2703,6 +2701,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1218497039, guid: 0b51497a9fa47d14582355353f6b1499, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1390803041790791123, guid: 0b51497a9fa47d14582355353f6b1499, type: 3}
       propertyPath: m_RootOrder
       value: 2
