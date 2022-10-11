@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
 
         transform.position = new Vector3(-8.35f, Mathf.Clamp(transform.position.y, 0.25f, 8f), 0);
 
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.touchCount > 0) && canChange)
+        if ((Input.GetAxis("Jump") > 0 || Input.touchCount > 0) && canChange)
         {
             GameManager.Instance.ChangeMode();
             myRenderer.sprite = GameManager.Instance.whitemode ? spriteW : spriteB;
