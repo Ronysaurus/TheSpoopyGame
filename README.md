@@ -3,12 +3,12 @@
 
 ### High Concept: 
 
-A spoopy game for halloween where you controll a witch flying thorough the cementery while avoiding obstacles
+A spoopy game for Halloween where you control a witch flying thorough the cemetery while avoiding obstacles 
 
 
 ### Genre: 
 
-Endless Runner(?)
+Endless Runner
 
 
 ### Style: 
